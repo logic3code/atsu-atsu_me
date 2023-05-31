@@ -681,6 +681,16 @@ Author URI:
   animation-fill-mode: forwards;
 }
 
+.is-style-p_balloon_bottom {
+  border-radius: 0;
+  transform: skewY(-2deg);
+  padding: 0.5em 1.5em !important;
+}
+
+.wp-block-heading.is-style-stylenone {
+  transform: skewY(-2deg);
+}
+
 .kakko {
   --bar-style: solid;
   --bar-size: 2px;
