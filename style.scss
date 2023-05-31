@@ -1,0 +1,442 @@
+/*
+Template: jstork19
+Theme Name: stork19_custom
+Version: 1.0.0
+Author: bridge inc.
+Author URI: 
+*/
+
+:root {
+	--stk-margin: 3em;
+}
+
+@import 'scss/svg.scss';
+
+
+// グローバルメニューのサイズを大きく
+@media only screen and (min-width: 768px) {
+	.ul__g_nav>.menu-item {
+		font-size: 90%;
+	}
+}
+
+// ドロップシャドウをなくす
+#inner-content,
+.stk_header,
+.stk_header[data-fixheader=true]::before,
+#footer,
+.h_layout_pc_left_normal #breadcrumb,
+.h_layout_pc_left_normal #viral-header,
+.h_layout_pc_center_normal #breadcrumb,
+.h_layout_pc_center_normal #viral-header {
+	box-shadow: none;
+}
+
+// 記事冒頭のナンバリング
+.post-number {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 1;
+}
+
+.article-header {
+	.post-number {
+		font-size: 4em;
+
+		@media only screen and (min-width: 768px) {
+			margin-left: -0.4em;
+		}
+	}
+}
+
+.cbox.type_ttl .cboxcomment {
+	padding: 1.6em;
+}
+
+// 記事リストの影を消す 
+.archives-list.card-list .post-list__link {
+	box-shadow: none !important;
+}
+
+// アイキャッチを角丸に
+.eyecatch.of-cover {
+	border-radius: 0.8em;
+}
+
+// SNSボタンをシンプル化
+.sns_btn__ul {
+	@media only screen and (min-width: 768px) {
+		.sns_btn__li {
+			margin: 5px;
+		}
+	}
+
+	.sns_btn__link {
+		background: none !important;
+		box-shadow: none !important;
+		color: #333;
+		border: 2px solid;
+	}
+}
+
+.sns_btn__ul .sns_btn__link .stk_sns__svgicon {
+	fill: currentColor;
+	width: 1.2em;
+	height: 1.2em;
+
+}
+
+// トップへ戻るをアツメくんにする
+#page-top {
+	.pt-button {
+		background: none;
+		width: 55px;
+		height: 40px;
+		// line-height: 55px;
+		border-radius: 0;
+		// padding: 0;
+		// color: #fff;
+
+		&::before {
+			display: none;
+		}
+
+		@media only screen and (min-width: 768px) {
+			&:hover {
+				height: 70px;
+			}
+		}
+
+		@media only screen and (max-width: 767px) {
+			&:active {
+				height: 70px;
+			}
+
+		}
+	}
+}
+
+// キャプション上のマージンを調整
+.site_description {
+	margin-top: 10px;
+}
+
+// ロゴをマウスオーバーで震わせる
+@media only screen and (min-width: 768px) {
+
+	.custom-logo-link:hover,
+	.pt-button:hover {
+		// animation: rumble 0.12s linear infinite;
+		animation: rumble 0.12s linear 8;
+	}
+}
+
+@keyframes rumble {
+	0% {
+		transform: rotate(0deg) translate(0, 0);
+	}
+
+	12.5% {
+		transform: rotate(0.4deg) translate(1px, -1px);
+	}
+
+	25% {
+		transform: rotate(0.8deg) translate(0px, 1px);
+	}
+
+	37.5% {
+		transform: rotate(0.4deg) translate(-1px, 0);
+	}
+
+	50% {
+		transform: rotate(0deg) translate(0, 0);
+	}
+
+	62.5% {
+		transform: rotate(-0.4deg) translate(1px, 0);
+	}
+
+	75% {
+		transform: rotate(-0.8deg) translate(0, 1px);
+	}
+
+	87.5% {
+		transform: rotate(-0.4deg) translate(-1px, -1px);
+	}
+
+	100% {
+		transform: rotate(0deg) translate(0, 0);
+	}
+}
+
+
+.entry-header .eyecatch:last-child {
+	margin-bottom: var(--stk-margin);
+}
+
+
+#maincopy {
+	text-align: center;
+}
+
+
+
+@keyframes hanten {
+	0% {
+		transform: scale(1, 1);
+	}
+
+	30% {
+		transform: scale(-1, 1);
+	}
+}
+
+.atsuatsu_kun {
+	// overflow: hidden;
+	animation: fadeIn 0.3s 4s linear;
+	animation-fill-mode: both;
+
+	img{
+		animation: hanten 1.2s steps(1) 0s infinite;
+		animation-fill-mode: forwards;
+	}
+}
+
+
+
+@keyframes scaleUpDown {
+
+	0%,
+	100% {
+		transform: scaleY(1) scaleX(1);
+	}
+
+	50%,
+	90% {
+		transform: scaleY(1.1);
+	}
+
+	75% {
+		transform: scaleY(0.95);
+	}
+
+	80% {
+		transform: scaleX(0.95);
+	}
+}
+
+@keyframes shake {
+
+	0%,
+	100% {
+		transform: skewX(0) scale(1);
+	}
+
+	50% {
+		transform: skewX(5deg) scale(0.9);
+	}
+}
+
+@keyframes particleUp {
+	0% {
+		opacity: 0;
+	}
+
+	20% {
+		opacity: 1;
+	}
+
+	80% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		top: -100%;
+		transform: scale(0.5);
+	}
+}
+
+@keyframes glow {
+
+	0%,
+	100% {
+		background-color: #ef5a00;
+	}
+
+	50% {
+		background-color: #ff7800;
+	}
+}
+
+.fire {
+	position: absolute;
+	left: calc(50% - 50px);
+	margin-top: 50px;
+	width: 100px;
+	height: 100px;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	transform: scale(0.3);
+	animation: fadeIn 0.5s 4s linear;
+	animation-fill-mode: both;
+}
+
+.fire-center {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	animation: scaleUpDown 3s ease-out;
+	animation-iteration-count: infinite;
+	animation-fill-mode: both;
+
+	.main-fire {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: radial-gradient(farthest-corner at 5px 0,
+				#d43300 0%,
+				#ef5a00 95%);
+		transform: scaleX(0.75) rotate(45deg);
+		border-radius: 0 40% 60% 40%;
+		filter: drop-shadow(0 0 2px #d43322);
+	}
+
+	.particle-fire {
+		position: absolute;
+		top: 60%;
+		left: 45%;
+		width: 10px;
+		height: 10px;
+		background-color: #ef5a00;
+		border-radius: 50%;
+		filter: drop-shadow(0 0 2px #d43322);
+		animation: particleUp 2s ease-out 0;
+		animation-iteration-count: infinite;
+		animation-fill-mode: both;
+	}
+}
+
+.fire-right {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	animation: shake 2s ease-out 0;
+	animation-iteration-count: infinite;
+	animation-fill-mode: both;
+
+	.main-fire {
+		position: absolute;
+		top: 15%;
+		right: -35%;
+		width: 80%;
+		height: 80%;
+		background-color: #ef5a00;
+		transform: scaleX(0.75) rotate(45deg);
+		border-radius: 0 40% 60% 40%;
+		filter: drop-shadow(0 0 2px #d43322);
+	}
+
+	.particle-fire {
+		position: absolute;
+		top: 45%;
+		left: 50%;
+		width: 15px;
+		height: 15px;
+		background-color: #ef5a00;
+		transform: scaleX(0.75) rotate(45deg);
+		border-radius: 50%;
+		filter: drop-shadow(0 0 2px #d43322);
+		animation: particleUp 2s ease-out 0;
+		animation-iteration-count: infinite;
+		animation-fill-mode: both;
+	}
+}
+
+.fire-left {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	animation: shake 3s ease-out 0;
+	animation-iteration-count: infinite;
+	animation-fill-mode: both;
+
+	.main-fire {
+		position: absolute;
+		top: 15%;
+		left: -30%;
+		width: 80%;
+		height: 80%;
+		background-color: #ef5a00;
+		transform: scaleX(0.75) rotate(45deg);
+		border-radius: 0 40% 60% 40%;
+		filter: drop-shadow(0 0 2px #d43322);
+	}
+
+	.particle-fire {
+		position: absolute;
+		top: 10%;
+		left: 20%;
+		width: 10%;
+		height: 10%;
+		background-color: #ef5a00;
+		border-radius: 50%;
+		filter: drop-shadow(0 0 2px #d43322);
+		animation: particleUp 3s infinite ease-out 0;
+		animation-fill-mode: both;
+	}
+}
+
+.fire-bottom .main-fire {
+	position: absolute;
+	top: 30%;
+	left: 20%;
+	width: 75%;
+	height: 75%;
+	background-color: #ff7800;
+	transform: scaleX(0.75) rotate(45deg);
+	border-radius: 0 40% 100% 40%;
+	filter: blur(10px);
+	animation: glow 2s ease-out 0;
+	animation-iteration-count: infinite;
+	animation-fill-mode: both;
+}
+
+
+
+
+.kakko {
+	--bar-style: solid;
+	--bar-size: 2px;
+	--bar-color: #000000;
+
+	padding: 3em;
+	text-align: center;
+	position: relative;
+
+	&::before,
+	&::after {
+		content: '';
+		width: 3em;
+		height: 3em;
+		position: absolute;
+	}
+
+	&::before {
+		border-left: var(--bar-style) var(--bar-size) var(--bar-color);
+		border-top: var(--bar-style) var(--bar-size) var(--bar-color);
+		top: 0;
+		left: 0;
+	}
+
+	&::after {
+		border-right: var(--bar-style) var(--bar-size) var(--bar-color);
+		border-bottom: var(--bar-style) var(--bar-size) var(--bar-color);
+		bottom: 0;
+		right: 0;
+	}
+}
