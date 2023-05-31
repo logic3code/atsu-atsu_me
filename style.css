@@ -600,6 +600,11 @@ Author URI:
 
 .site_description {
   margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+.site__logo.fs_custom .custom-logo {
+  height: 3em;
 }
 
 @media only screen and (min-width: 768px) {
