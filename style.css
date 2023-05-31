@@ -1047,14 +1047,27 @@ Author URI:
 }
 .atsuatsu_kun {
   overflow: hidden;
+  position: absolute;
+  bottom: -25px;
+  left: calc(50% - 35px);
 }
 .atsuatsu_kun figure {
-  animation: nyoki 0.4s 0.2s 1;
+  animation: nyoki 0.4s 2s 1;
   animation-fill-mode: both;
 }
 .atsuatsu_kun img {
   animation: hanten 1.2s steps(1) 0s infinite;
   animation-fill-mode: forwards;
+}
+
+.is-style-p_balloon_bottom {
+  border-radius: 0;
+  transform: skewY(-2deg);
+  padding: 0.5em 1.5em !important;
+}
+
+.wp-block-heading.is-style-stylenone {
+  transform: skewY(-2deg);
 }
 
 .kakko {
