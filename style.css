@@ -668,9 +668,12 @@ Author URI:
 }
 .atsuatsu_kun {
   overflow: hidden;
+  position: absolute;
+  bottom: -25px;
+  left: calc(50% - 35px);
 }
 .atsuatsu_kun figure {
-  animation: nyoki 0.4s 0.2s 1;
+  animation: nyoki 0.4s 2s 1;
   animation-fill-mode: both;
 }
 .atsuatsu_kun img {
