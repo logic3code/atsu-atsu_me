@@ -208,11 +208,12 @@ Author URI:
 
 .atsuatsu_kun {
 	overflow: hidden;
-	// animation: fadeIn 0.3s 4s linear;
-	// animation-fill-mode: both;
+	position: absolute;
+    bottom: -25px;
+    left: calc(50% - 35px);
 
 	figure {
-		animation: nyoki 0.4s 0.2s 1;
+		animation: nyoki 0.4s 2s 1;
 		animation-fill-mode: both;
 	}
 
@@ -223,7 +224,14 @@ Author URI:
 }
 
 
-
+.is-style-p_balloon_bottom {
+    border-radius: 0;
+    transform: skewY(-2deg);
+    padding: 0.5em 1.5em!important;
+}
+.wp-block-heading.is-style-stylenone {
+	transform: skewY(-2deg);
+}
 .kakko {
 	--bar-style: solid;
 	--bar-size: 2px;
