@@ -83,16 +83,19 @@ if (!function_exists('pagetop')) {
 		echo $output;
 	}
 }
-
-function post_number() {
-    $number = ( max( 1, $paged ) - 1 ) * $wp_query->query_vars['posts_per_page'] + $wp_query->current_post + 1;
-    if(!$number)
-    {
-        return 'なにもないよ';
-    } else {
-        return '<span class="post-number gf bold">#0' . $number . '</span>';
-    }
+function get_post_number( $post_type = 'post', $op = '<=' ) {
+    global $wpdb, $post;
+    $post_type = is_array($post_type) ? implode("','", $post_type) : $post_type;
+    $number = $wpdb->get_var("
+        SELECT COUNT( * )
+        FROM $wpdb->posts
+        WHERE post_date {$op} '{$post->post_date}'
+        AND post_status = 'publish'
+        AND post_type = ('{$post_type}')
+    ");
+    return '<span class="post-number gf bold">#0' . $number . '</span>';
 }
+
 // 記事内のサムネイル画像
 if (!function_exists('stk_post_main_thum')) {
 	function stk_post_main_thum($post_id, $container_class = null)
@@ -115,7 +118,7 @@ if (!function_exists('stk_post_main_thum')) {
 			echo '<figcaption class="eyecatch-caption-text">' . $pt_caption . '</figcaption>';
 		}
         
-        echo post_number();
+        echo get_post_number();
 
 		echo '</figure>';
 	}
@@ -138,7 +141,7 @@ if (!function_exists('skt_oc_post_thum')) {
 				)
 			);
 
-            $thumb .= post_number();
+            $thumb .= get_post_number();
 		} else {
 			$thumb = oc_noimg();
 		}

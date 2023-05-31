@@ -40,6 +40,8 @@ Author URI:
 	margin-top: 0;
 	margin-bottom: 0;
 	line-height: 1;
+	// text-shadow: 0px 0px 1px #fff,1px 1px 1px #fff;
+	background: #ffffffd8;
 }
 
 .article-header {
@@ -47,6 +49,7 @@ Author URI:
 		font-size: 4em;
 
 		@media only screen and (min-width: 768px) {
+			top: 10px;
 			margin-left: -0.4em;
 		}
 	}
@@ -212,9 +215,17 @@ Author URI:
     bottom: -25px;
     left: calc(50% - 35px);
 
+	// figure {
+	// 	animation: nyoki 0.4s 3.7s 1;
+	// 	animation-fill-mode: both;
+	// }
 	figure {
-		animation: nyoki 0.4s 2s 1;
-		animation-fill-mode: both;
+		transform: translateY(40%);
+		transition: transform 0.3s;
+		&:hover,
+		&:active {
+			transform: translateY(0);
+		}
 	}
 
 	img{
