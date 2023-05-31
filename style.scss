@@ -124,17 +124,17 @@ Author URI:
 	margin-top: 10px;
 }
 
-// ロゴをマウスオーバーで震わせる
+// ロゴをマウスオーバーでブルブルさせる
 @media only screen and (min-width: 768px) {
 
 	.custom-logo-link:hover,
 	.pt-button:hover {
-		// animation: rumble 0.12s linear infinite;
-		animation: rumble 0.12s linear 8;
+		// animation: buruburuburuburu 0.12s linear infinite;
+		animation: buruburuburuburu 0.12s linear 8;
 	}
 }
 
-@keyframes rumble {
+@keyframes buruburuburuburu {
 	0% {
 		transform: rotate(0deg) translate(0, 0);
 	}
@@ -193,11 +193,25 @@ Author URI:
 		transform: scale(-1, 1);
 	}
 }
+@keyframes nyoki {
+	0% {
+		transform: translateY(40%);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
 
 .atsuatsu_kun {
-	// overflow: hidden;
-	animation: fadeIn 0.3s 4s linear;
-	animation-fill-mode: both;
+	overflow: hidden;
+	// animation: fadeIn 0.3s 4s linear;
+	// animation-fill-mode: both;
+
+	figure {
+		animation: nyoki 0.4s 0.2s 1;
+		animation-fill-mode: both;
+	}
 
 	img{
 		animation: hanten 1.2s steps(1) 0s infinite;
