@@ -537,6 +537,7 @@ Author URI:
   margin-top: 0;
   margin-bottom: 0;
   line-height: 1;
+  background: rgba(255, 255, 255, 0.8470588235);
 }
 
 .article-header .post-number {
@@ -544,6 +545,7 @@ Author URI:
 }
 @media only screen and (min-width: 768px) {
   .article-header .post-number {
+    top: 10px;
     margin-left: -0.4em;
   }
 }
