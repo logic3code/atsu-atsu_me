@@ -675,8 +675,11 @@ Author URI:
   left: calc(50% - 35px);
 }
 .atsuatsu_kun figure {
-  animation: nyoki 0.4s 2s 1;
-  animation-fill-mode: both;
+  transform: translateY(40%);
+  transition: transform 0.3s;
+}
+.atsuatsu_kun figure:hover, .atsuatsu_kun figure:active {
+  transform: translateY(0);
 }
 .atsuatsu_kun img {
   animation: hanten 1.2s steps(1) 0s infinite;

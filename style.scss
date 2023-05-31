@@ -215,9 +215,17 @@ Author URI:
     bottom: -25px;
     left: calc(50% - 35px);
 
+	// figure {
+	// 	animation: nyoki 0.4s 3.7s 1;
+	// 	animation-fill-mode: both;
+	// }
 	figure {
-		animation: nyoki 0.4s 2s 1;
-		animation-fill-mode: both;
+		transform: translateY(40%);
+		transition: transform 0.3s;
+		&:hover,
+		&:active {
+			transform: translateY(0);
+		}
 	}
 
 	img{
