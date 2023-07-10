@@ -60,7 +60,7 @@ if (!function_exists('pagetop')) {
 
 		$output = '
 		<div id="page-top"' . $amp_class . '>
-			<a href="#container" class="pt-button" title="ページトップへ"><img src="/wp-content/uploads/2023/05/pagetop.svg" alt="PAGE TOP"></a>
+			<a href="#container" class="pt-button" title="ページトップへ"><img src="'.esc_url( home_url( ) ).'/wp-content/uploads/2023/05/pagetop.svg" alt="PAGE TOP"></a>
 		</div>';
 		$output = minify_html($output);
 		if (!stk_is_amp()) {
