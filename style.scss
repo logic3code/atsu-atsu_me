@@ -10,6 +10,12 @@ Author URI:
 	--stk-margin: 3em;
 }
 
+.cat_postlist.typecard .cat_postlist__ul {
+	@media only screen and (min-width: 768px) {
+		--postlist_card__gap: 0.8em;
+	}
+}
+
 @import 'scss/svg.scss';
 
 
