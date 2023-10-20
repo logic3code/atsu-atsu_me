@@ -150,6 +150,19 @@ if (!function_exists('skt_oc_post_thum')) {
 	}
 }
 
+function bge_slug_auto_setting( $slug, $post_ID, $post_status, $post_type ) {
+	$post = get_post($post_ID);
+
+	// 初回の記事保存時にのみ、記事のSlugを記事IDに設定
+	if ( $post_type == 'post' && $post->post_date_gmt == '0000-00-00 00:00:00' ) {
+		$slug = $post_ID;
+		return $slug;
+	}
+
+	return $slug;
+}
+add_filter( 'wp_unique_post_slug', 'bge_slug_auto_setting', 10, 4 );
+
 
 function atsuatsume_copy(){
     return '
