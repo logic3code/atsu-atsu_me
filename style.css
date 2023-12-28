@@ -1348,7 +1348,7 @@ Author URI:
   background-repeat: no-repeat;
 }
 #maincopy svg {
-  max-width: 80%;
+  max-width: 75%;
 }
 
 @keyframes GradietionAnimation {
@@ -1372,16 +1372,17 @@ Author URI:
 }
 @keyframes nyoki {
   0% {
-    transform: translateY(40%);
+    transform: translateY(100%);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(40%);
   }
 }
 .atsuatsu_kun {
+  margin: 0 auto;
   overflow: hidden;
   position: absolute;
-  bottom: -25px;
+  bottom: 0;
   left: calc(50% - 35px);
 }
 .atsuatsu_kun figure {
