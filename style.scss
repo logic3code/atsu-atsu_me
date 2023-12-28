@@ -192,8 +192,22 @@ Author URI:
 
 #maincopy {
 	text-align: center;
+	.wp-block-cover__background {
+		background-size: 500% 500%!important;
+		animation: GradietionAnimation 9s ease infinite;
+		animation-direction: reverse;
+		background-repeat:no-repeat; 
+	}
+	svg {
+		max-width: 80%;
+	}
 }
 
+@keyframes GradietionAnimation { 
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}
 
 
 @keyframes hanten {
