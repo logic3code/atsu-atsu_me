@@ -192,8 +192,39 @@ Author URI:
 
 #maincopy {
 	text-align: center;
+	.wp-block-cover__background {
+		background-size: 500% 500%!important;
+		animation: GradietionAnimation 9s ease infinite;
+		animation-direction: reverse;
+		background-repeat:no-repeat; 
+	}
+	svg {
+		max-width: 94%;
+	}
+	#subcopy {
+		margin-top: 1em;
+		@media only screen and (min-width: 768px) {
+			font-size: 125%;
+		}
+		.has-mainttlbg-color {
+			padding: 2px 4px;
+		}
+	}
+	.stk-wow-fadeInUp {
+		transition: opacity 0.9s 2.9s, transform 0.9s 2.9s;
+
+		&:not([data-animated=animated]) {
+			transform: translateY(20px);
+		}
+	}
 }
 
+
+@keyframes GradietionAnimation { 
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}
 
 
 @keyframes hanten {
@@ -207,23 +238,24 @@ Author URI:
 }
 @keyframes nyoki {
 	0% {
-		transform: translateY(40%);
+		transform: translateY(100%);
 	}
 
 	100% {
-		transform: translateY(0);
+		transform: translateY(40%);
 	}
 }
 
 .atsuatsu_kun {
+	margin: 0 auto;
 	overflow: hidden;
 	position: absolute;
-    bottom: -25px;
+    bottom: 0;
     left: calc(50% - 35px);
+	// animation: nyoki 0.4s 4.5s 1;
+	// animation-fill-mode: both;
 
 	// figure {
-	// 	animation: nyoki 0.4s 3.7s 1;
-	// 	animation-fill-mode: both;
 	// }
 	figure {
 		transform: translateY(40%);
