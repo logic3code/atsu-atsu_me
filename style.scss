@@ -199,9 +199,26 @@ Author URI:
 		background-repeat:no-repeat; 
 	}
 	svg {
-		max-width: 75%;
+		max-width: 94%;
+	}
+	#subcopy {
+		margin-top: 1em;
+		@media only screen and (min-width: 768px) {
+			font-size: 125%;
+		}
+		.has-mainttlbg-color {
+			padding: 2px 4px;
+		}
+	}
+	.stk-wow-fadeInUp {
+		transition: opacity 0.9s 2.9s, transform 0.9s 2.9s;
+
+		&:not([data-animated=animated]) {
+			transform: translateY(20px);
+		}
 	}
 }
+
 
 @keyframes GradietionAnimation { 
 	0%{background-position:0% 50%}
